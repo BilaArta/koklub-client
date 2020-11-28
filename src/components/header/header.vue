@@ -1,20 +1,52 @@
-<template>  
-    <v-app-bar
-        absolute
-        dense
-        flat
-        elevate-on-scroll
+<template>
+    <v-toolbar
+        
+        justify="center"
     >
-        <v-spacer></v-spacer>
-        <v-toolbar-title>Desa Tibubiu</v-toolbar-title>
-        <v-spacer></v-spacer>
-    </v-app-bar>
+    <router-link to="/">
+      <v-toolbar-title class="yellow--text subtitle-1 text-uppercase">Koklub</v-toolbar-title>
+    </router-link>
+      <v-spacer></v-spacer>
+      <div>
+        <v-btn
+            dense
+            class="ma-1"
+            text
+        >
+            F.A.Q
+        </v-btn>
 
+        <v-btn
+            dense
+            class="ma-1"
+            text
+            @click="route('/')"
+        >
+            Login
+        </v-btn>
+        <v-btn
+            dense
+            class="ma-1"
+            text
+            @click="route('sign-in')"
+        >
+            Sign In
+        </v-btn>
+      </div>
+    
+    </v-toolbar>
 </template>
 
 <script>
 export default {
+    data : () => ({
 
+    }),
+    methods: {
+        route(url) {
+            this.$router.push(url);
+        }
+    }
 }
 </script>
 

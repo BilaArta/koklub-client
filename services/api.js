@@ -7,7 +7,7 @@ const url = "/api/users/";
 // });
 
 class postUsers {
-    static getUsers() {
+    static getAllUsers() {
         return new Promise((resolve, reject) => {
             axios.get(url)
                 .then(response => {
@@ -16,6 +16,39 @@ class postUsers {
                 })
                 .catch(error => reject(error));
         });
+    }
+
+    static getOneUser(_id) {
+        return new Promise((resolve, reject) => {
+            axios.get(url + _id)
+                .then((result) => {
+                    console.log(result);
+                    resolve(result.data.data);
+                })
+                .catch(err => reject(err));
+        })
+    }
+
+    static createUser(data){
+        return new Promise((resolve, reject) => {
+            axios.post(url, data)
+                .then((result) => {
+                    console.log(result);
+                    resolve(result)
+                })
+                .catch(err => reject(err));
+        })
+    }
+
+    static loginUser() {
+        return new Promise((resolve, reject) => {
+            axios.post(url)
+                .then((result) => {
+                    console.log(result);
+                    resolve(result.data);
+                })
+                .catch(err => reject(err));
+        })
     }
 }
 
