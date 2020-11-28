@@ -3,9 +3,7 @@
         
         justify="center"
     >
-    <router-link to="/">
       <v-toolbar-title class="yellow--text subtitle-1 text-uppercase">Koklub</v-toolbar-title>
-    </router-link>
       <v-spacer></v-spacer>
       <div>
         <v-btn

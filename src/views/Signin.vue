@@ -1,10 +1,10 @@
 <template>
   <div>
       <v-row class="pa-4">
-        <v-col cols="4">
+        <v-col cols="1" sm="2" md="3" lg="4" xl="4">
         </v-col>
         
-        <v-col cols="4">
+        <v-col cols="10" sm="8" md="6" lg="4" xl="4">
           <v-card
             class="pa-4"
             elevation="4"
@@ -79,7 +79,7 @@
           </v-card>
         </v-col>
         
-        <v-col cols="4">
+        <v-col cols="1" sm="2" md="3" lg="4" xl="4">
         </v-col>
       </v-row>
   </div>
@@ -88,7 +88,6 @@
 <script>
 
 import postUsers from "../../services/api.js"
-
 
 export default {
   name: 'Signin',
