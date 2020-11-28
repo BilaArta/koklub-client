@@ -41,6 +41,7 @@
               >
                 <v-btn
                   class="mt-4"
+                  @click="submit()"
                 > LOGIN
                 </v-btn>
               </v-row>
@@ -56,7 +57,7 @@
 
 <script>
 
-
+import postUsers from "../../services/api.js"
 
 export default {
   name: 'Login',
@@ -78,5 +79,15 @@ export default {
         v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
       ],
   }),
+  methods: {
+    async submit(){
+      try{
+        const id = await postUsers.loginUser(this.email, this.password)
+        this.$router.push({ path: `/user/${id}`})
+      }catch{
+        this.$router.push({ path: `/`})
+      }
+    }
+  }
 }
 </script>

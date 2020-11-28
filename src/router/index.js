@@ -17,6 +17,16 @@ const routes = [
             name: 'Sign-in',
             component: () => import('@/views/Signin')
         },
+        {
+          path: '/user/:id',
+          name: 'User logged in',
+          component: () => import('@/views/Home')
+        },
+        // {
+        //   path: '*',
+        //   name: 'Not-found',
+        //   component: () => import('')
+        // },
     ]
   }
 ]

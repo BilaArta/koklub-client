@@ -1,4 +1,4 @@
-# website-desa
+# Koklub frontend
 
 ## Project setup
 ```

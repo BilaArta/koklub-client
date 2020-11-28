@@ -40,12 +40,12 @@ class postUsers {
         })
     }
 
-    static loginUser() {
+    static loginUser(email, password) {
         return new Promise((resolve, reject) => {
-            axios.post(url)
+            axios.post(url+'login', ({email,password}))
                 .then((result) => {
                     console.log(result);
-                    resolve(result.data);
+                    resolve(result.data.id)
                 })
                 .catch(err => reject(err));
         })
